@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package microservice.learning.com.application.endpoint.controller;
+package microservice.learning.com.endpoint.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import microservice.learning.com.service.RestauranteService;
