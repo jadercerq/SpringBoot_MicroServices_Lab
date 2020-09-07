@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>microservice.learning.com</groupId>
@@ -7,24 +8,37 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     
-    <artifactId>application</artifactId>
-    <packaging>jar</packaging>
-    <name>Module - Application</name>
-    
+    <artifactId>discovery</artifactId>
+    <name>Module - Discovery</name>
+    <description>Discovery Service</description>
+
     <properties>
         <java.version>11</java.version>
+        <javax.activation.version>1.1.1</javax.activation.version>
     </properties>
-    
+
     <dependencies>
         <dependency>
-            <groupId>microservice.learning.com</groupId>
-            <artifactId>core</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.activation</groupId>
+            <artifactId>activation</artifactId>
+            <version>${javax.activation.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
         </dependency>
     </dependencies>
-    
+
     <build>
-        <finalName>application</finalName>
+        <finalName>discovery</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -44,4 +58,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

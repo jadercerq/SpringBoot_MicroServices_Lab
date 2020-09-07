@@ -1,18 +1,13 @@
 ## YAML Template.
 ---
 spring:
-    application: 
-        name: cardapio
-    data:
-        mongodb:
-            database: cardapio_db
-            port: 27017
-            authentication-database: admin
-            username: root
-            password: root
+    application:
+        name: gateway
 server:
-    port: 8082
-    
+    port: 8080
+    servlet:
+        context-path: /gateway
+        
 eureka:
     instance:
         prefer-ip-address: true
@@ -21,3 +16,6 @@ eureka:
             defaultZone: http://localhost:8081/eureka/
         fetch-registry: true
         register-with-eureka: true
+        
+zuul:
+    sensitive-headers: Cookie
