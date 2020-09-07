@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package microservice.learning.com.endpoint.controller;
+package microservice.learning.com.application.endpoint.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import microservice.learning.com.cardapio.endpoint.service.RestauranteService;
+import microservice.learning.com.service.RestauranteService;
 import microservice.learning.com.core.model.Restaurante;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;

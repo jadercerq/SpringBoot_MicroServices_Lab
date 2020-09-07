@@ -18,7 +18,7 @@
     <dependencies>
         <dependency>
             <groupId>microservice.learning.com</groupId>
-            <artifactId>microservice.learning.com.service</artifactId>
+            <artifactId>microservice.learning.com.core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

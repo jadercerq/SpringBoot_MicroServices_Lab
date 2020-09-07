@@ -1,0 +1,14 @@
+## YAML Template.
+---
+server:
+    port: 8080
+    
+spring:
+    application: cardapio
+    data:
+        mongodb:
+            database: cardapio_db
+            port: 27017
+            authentication-database: admin
+            username: root
+            password: root
