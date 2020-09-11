@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package microservice.learning.com.endpoint.controller;
+package microservice.learning.com.application.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import microservice.learning.com.service.RestauranteService;
+import microservice.learning.com.application.service.RestauranteService;
 import microservice.learning.com.core.model.Restaurante;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -14,6 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,5 +30,10 @@ public class RestauranteController {
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Iterable<Restaurante>> list(Pageable pageable) {
         return new ResponseEntity<>(restauranteService.findAll(pageable), HttpStatus.OK);
+    }
+    
+    @GetMapping(path = {"/{id}"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Restaurante> findById(@PathVariable String id) {
+        return new ResponseEntity<>(restauranteService.findById(id), HttpStatus.OK);
     }
 }

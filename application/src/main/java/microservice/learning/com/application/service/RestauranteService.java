@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package microservice.learning.com.service;
+package microservice.learning.com.application.service;
 
 import lombok.extern.slf4j.Slf4j;
 import microservice.learning.com.core.model.Restaurante;
@@ -15,12 +15,17 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 public class RestauranteService {
-    
+
     @Autowired
     private RestauranteRepository restauranteRepository;
-    
+
     public Iterable<Restaurante> findAll(Pageable pageable) {
         log.info("Listando restaurantes");
-       return restauranteRepository.findAll(pageable);
+        return restauranteRepository.findAll(pageable);
+    }
+
+    public Restaurante findById(String id) {
+        log.info("Obtendo um restaurante");
+        return restauranteRepository.findById(id).get();
     }
 }
