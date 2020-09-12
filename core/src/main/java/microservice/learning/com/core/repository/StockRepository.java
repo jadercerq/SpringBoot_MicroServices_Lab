@@ -5,13 +5,13 @@
  */
 package microservice.learning.com.core.repository;
 
-import microservice.learning.com.core.model.Restaurante;
+import microservice.learning.com.core.model.Stock;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
  *
  * @author jader
  */
-public interface RestauranteRepository extends MongoRepository<Restaurante, String>{
+public interface StockRepository extends MongoRepository<Stock, String>{
     
 }
